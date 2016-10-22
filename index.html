@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset = "utf-8";>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Social Media and Broadband in the U.S.</title>
+
+<link rel="stylesheet" href="styles/main.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"> </script>
+<script src="js/highcharts.js"></script>
+
+</head>
+
+<body>
+  <article>
+    <aside>
+      <h1>
+   Trends Between Increasing Broadband Use and Social Media Use
+      </h1>
+
+<p> Over the years the United States has managed to develop efficient ways to  browse the Internet at faster speeds. The Internet has been an important part of society since its creation in many ways from professional work to recreational use. Now social media is becoming a large component of the use of internet. The following two charts will show a correlation between the rise in the use of broadband internet and social media. Both have played a role in transforming society.</P>
+    </aside>
+
+ <div id="container" style="width: 50%; height: 400px;"></div>
+ <div id="something" style="width: 50%; height: 400px;"></div>
+
+
+ <script>
+
+ $(function() {
+  $('#container').highcharts({
+    chart: {
+      type: 'areaspline'
+    },
+    title: {
+      text: 'Home Internet Connection'
+    },
+    legend: {
+      layout: 'vertical',
+      align: 'left',
+      verticalAlign: 'top',
+      x: 150,
+      y: 100,
+      floating: true,
+      borderWidth: 1,
+      backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+    },
+    xAxis: {
+      categories: [
+        '2006',
+        '2008',
+        '2010',
+        '2012',
+        '2014'
+      ],
+      plotBands: [{ // visualize the weekend
+        from: 4.5,
+        to: 6.5,
+        color: 'rgba(68, 170, 213, .2)'
+      }]
+    },
+    yAxis: {
+      title: {
+        text: 'Percent of Americans with Dialup or Broadband'
+      }
+    },
+    tooltip: {
+      shared: true,
+      valueSuffix: ' units'
+    },
+    credits: {
+      enabled: false
+    },
+    plotOptions: {
+      areaspline: {
+        fillOpacity: 0.5
+      }
+    },
+    series: [{
+      name: 'Dialup',
+      data: [23, 10, 5, 3, 2.5]
+    }, {
+      name: 'Broadband',
+      data: [42, 55, 66, 66, 70]
+    }]
+  });
+});
+ </script>
+
+ <script>
+
+ $(function() {
+   $('#something').highcharts({
+     chart: {
+       type: 'column'
+     },
+     title: {
+       text: 'Social Media Use'
+     },
+     subtitle: {
+       //   text: 'Source: WorldClimate.com'
+     },
+     xAxis: {
+       categories: [
+         '2006',
+         '2008',
+         '2010',
+         '2012',
+         '2014'
+       ],
+       crosshair: true
+     },
+     yAxis: {
+       min: 0,
+       title: {
+         text: 'Percent of Internet Users Using Social Media'
+       }
+     },
+     tooltip: {
+       headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+       pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+         '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+       footerFormat: '</table>',
+       shared: true,
+       useHTML: true
+     },
+     plotOptions: {
+       column: {
+         pointPadding: 0.2,
+         borderWidth: 0
+       }
+     },
+     series: [{
+       name: 'All Internet Users',
+       data: [16, 29, 61, 67.3, 74]
+
+     }, {
+       name: '18-29',
+       data: [49, 67, 86, 87, 89]
+
+     }, {
+       name: '30-49',
+       data: [8, 24, 61, 74, 89]
+
+     }, {
+       name: '50-64',
+       data: [4, 11, 47, 53, 65]
+
+     }, {
+       name: '65+',
+       data: [1, 7, 26, 34.6, 49]
+     }]
+   });
+ });
+ </script>
+
+   <p>
+     <strong> Source: </strong> Pew Research Center, <a href= "http://www.pewresearch.org/data-trend/media-and-technology/social-networking-use/"> Social media use of Americans by age group</a></p>
+
+   <p>
+     <strong> Source: </strong> Pew Research Center, <a href= "http://www.pewresearch.org/data-trend/media-and-technology/internet-penetration/">American adult access to dialup or broadband</a></p>
+
+     <p> This page was designed by Tajon Hinds </p>
+    </article>
+   </body>
+</html>
